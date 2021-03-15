@@ -1,5 +1,12 @@
-git 配置
+git 配置:
 git config --global user.name "xx"
 git config --global user.email "xx"
 
-git 常用命令
+git 常用命令:
+git init  # git 初始化，创建一个名为 .git 的子目录，这个子目录含有你初始化的 Git 仓库中所有的必须文件
+git clone URL # 克隆现有的仓库
+git status  # 检查当前文件状态
+git add xx  # 跟踪新文件，添加到暂存区
+git commit xx -m "" # 暂存区里的指定文件改动给提交到本地库
+git commit -m ""    # 暂存区里的所有文件改动给提交到本地库
+git commit -am ""   # -a参数可以将所有已跟踪文件中的执行修改或删除操作的文件都提交到本地仓库，即使它们没有经过git add添加到暂存区
