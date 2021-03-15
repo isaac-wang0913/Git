@@ -1,0 +1,5 @@
+git 配置
+git config --global user.name "xx"
+git config --global user.email "xx"
+
+git 常用命令
