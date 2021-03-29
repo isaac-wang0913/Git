@@ -13,6 +13,7 @@ git 常用命令:
 git init  # git 初始化，创建一个名为 .git 的子目录，这个子目录含有你初始化的 Git 仓库中所有的必须文件
 git clone URL # 克隆现有的仓库
 git status  # 检查当前文件状态
+git remote  # 查看远端服务器的名称
 git add xx  # 跟踪新文件，xx添加到暂存区
 git add .   # 跟踪新文件，当前目录全部添加到暂存区
 git commit xx -m "" # 文件必须先add到暂存区，暂存区里的指定文件改动给提交到本地库
@@ -21,6 +22,7 @@ git commit -am ""   # -a参数可以将所有已跟踪文件中的执行修改�
 git commit --amend  # 修改最近一次提交的内容，会生成一个新的commit节点
 git branch    # 查看本地分支
 git branch -r # 查看远端的分支
+git branch -a # 查看本地和远端所有的分支
 git remote # 查看远端的服务器
 git checkout xx     # 切换分支到xx
 git checkout -b xx  # 创建新的分支，并切换到新分支，原分支都会继承到新的分支
@@ -29,11 +31,18 @@ git reflog  # 查看git历史命令
 git log # 查看提交的log
 git log -x  # 查看最近的几次log
 git log --name-status # 查看提交的log的具体信息
+git diff xx xxx   # 比较两个不同的分支的差异，可以和远程服务器的origin的分支比较
 git push origin master  # 推送到远端服务器origin的master分支
-git remove xx # 删除文件
+git rm xx # 删除文件
 git mv xx xx  # 改名和移动文件
-git merge xx xxx # 将原分支xx合并到新的分支xxx
+git merge xx xxx # 将原分支xx合并到当前的分支xxx
 git fetch origin xx # 将远端服务器origin的xx分支拉到本地
 git pull origin xx  # 将远端服务器origin的xx分支合并到本地（一般是操作同名的分支）
 git cherry-pick commitID  # 将另一个分支的特定节点，拉倒当前的分支，并创造一个新的commitID节点
 git reset --hard commitID # 返回到前面的某一节点，工作区的内容也恢复到了当前的节点，之前的修改无法恢复
+
+分支合并过程中的冲突处理
+1.当出现不同的分支，同时修改了同一个文件的同一行时候，然后都commit提交，当merge的时候，会出现冲突
+这时，在当前要merge到的节点 git status 查询冲突的文件，然后修改冲突文件，之后git add 和 commit 后，冲突解决
+
+
