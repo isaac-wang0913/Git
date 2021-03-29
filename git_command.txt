@@ -27,11 +27,13 @@ git remote # 查看远端的服务器
 git checkout xx     # 切换分支到xx
 git checkout -b xx  # 创建新的分支，并切换到新分支，原分支都会继承到新的分支
 git checkout xx     # 工作区未提交文件的还原，返回到最近节点的内容
+git checkout .      # 当前工作区未提交的所有文件都恢复到最近HEAD节点的内容
 git reflog  # 查看git历史命令
 git log # 查看提交的log
 git log -x  # 查看最近的几次log
 git log --name-status # 查看提交的log的具体信息
 git diff xx xxx   # 比较两个不同的分支的差异，可以和远程服务器的origin的分支比较
+git diff commitID1 commitID2  # 比较两个不同的节点的差异
 git push origin master  # 推送到远端服务器origin的master分支
 git rm xx # 删除文件
 git mv xx xx  # 改名和移动文件
@@ -40,6 +42,7 @@ git fetch origin xx # 将远端服务器origin的xx分支拉到本地
 git pull origin xx  # 将远端服务器origin的xx分支合并到本地（一般是操作同名的分支）
 git cherry-pick commitID  # 将另一个分支的特定节点，拉倒当前的分支，并创造一个新的commitID节点
 git reset --hard commitID # 返回到前面的某一节点，工作区的内容也恢复到了当前的节点，之前的修改无法恢复
+
 
 分支合并过程中的冲突处理
 1.当出现不同的分支，同时修改了同一个文件的同一行时候，然后都commit提交，当merge的时候，会出现冲突
